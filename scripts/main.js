@@ -51,7 +51,6 @@ document.getElementById("mostrarDatos2").innerHTML = msgPant;
 
 // Emmagatzemar en un Map les lletres de l'array y el nombre de vegades que apareixen
 name    = "Ignasi";
-name    = name.toUpperCase();
 msgPant = "<br>Ara comptem les vegades que apareixen les lletres...<br>";
 arrName = name.split('');
 
@@ -83,3 +82,16 @@ document.getElementById("mostrarDatos3").innerHTML = msgPant;
 
 // Crea una altra array amb el teu cognom, fusiona els dos arrays, afegint
 // afegeix un espai buit enmig i emmagatzema tot junt en l'array FullName.
+msgPant     = "<br>Ara muntarem un únic camp que contingui: nom + espai + cognom...<br><br>";
+let surName = "Ortiz";
+let arrSurn = surName.split('');
+
+for (charAt of arrSurn) {
+    console.log(charAt);
+}
+let fulName = arrName.concat(" ", arrSurn);
+console.log(fulName);
+msgPant += fulName;
+// string.replace(/ /g, "") --> per treure les comes ja que al venir d'un array ha separat
+msgPant = msgPant.replace(/,/g, "");
+document.getElementById("mostrarDatos4").innerHTML = msgPant;
