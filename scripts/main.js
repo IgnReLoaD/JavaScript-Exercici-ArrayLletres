@@ -51,6 +51,7 @@ document.getElementById("mostrarDatos2").innerHTML = msgPant;
 
 // Emmagatzemar en un Map les lletres de l'array y el nombre de vegades que apareixen
 name    = "Ignasi";
+name    = name.toUpperCase();
 msgPant = "<br>Ara comptem les vegades que apareixen les lletres...<br>";
 arrName = name.split('');
 
@@ -84,6 +85,7 @@ document.getElementById("mostrarDatos3").innerHTML = msgPant;
 // afegeix un espai buit enmig i emmagatzema tot junt en l'array FullName.
 msgPant     = "<br>Ara muntarem un únic camp que contingui: nom + espai + cognom...<br><br>";
 let surName = "Ortiz";
+surName     = surName.toUpperCase('');
 let arrSurn = surName.split('');
 
 for (charAt of arrSurn) {
@@ -95,3 +97,6 @@ msgPant += fulName;
 // string.replace(/ /g, "") --> per treure les comes ja que al venir d'un array ha separat
 msgPant = msgPant.replace(/,/g, "");
 document.getElementById("mostrarDatos4").innerHTML = msgPant;
+
+// per si es vol mostrar en minúscules, capitalitzant només la inicial de nom i de cognom:
+// miString.trim().toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
