@@ -50,3 +50,36 @@ document.getElementById("mostrarDatos2").innerHTML = msgPant;
 // --- Exercici-3 ---------------------------------------------------------------
 
 // Emmagatzemar en un Map les lletres de l'array y el nombre de vegades que apareixen
+name    = "Ignasi";
+name    = name.toUpperCase();
+msgPant = "<br>Ara comptem les vegades que apareixen les lletres...<br>";
+arrName = name.split('');
+
+// instanciem (creem un objecte mapName de tipus Classe Map ... una classe de JS)
+let mapName = new Map();    
+
+for (charAt of arrName) {
+    // utilitzem la funcio/metode GET (llegir) implementada a la classe MAP
+    let contador = mapName.get(charAt);
+    if (contador != null) {
+        contador = mapName.get(charAt)+1;
+    } else {
+        contador = 1;
+    }
+    // utilitzem la funcio/metode SET (escriure) implementada a la classe MAP
+    mapName.set(charAt, contador);
+}
+for (let [clau,valor] of mapName.entries()){
+    console.log(clau,valor);
+    if (valor>1){
+        msgPant += "La lletra " + clau + ", " + valor + " vegades.<br>";
+    } else {
+        msgPant += "La lletra " + clau + ", " + valor + " vegada.<br>";
+    }
+}
+document.getElementById("mostrarDatos3").innerHTML = msgPant;
+
+// --- Exercici-4 ---------------------------------------------------------------
+
+// Crea una altra array amb el teu cognom, fusiona els dos arrays, afegint
+// afegeix un espai buit enmig i emmagatzema tot junt en l'array FullName.
